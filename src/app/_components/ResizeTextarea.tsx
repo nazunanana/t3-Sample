@@ -1,24 +1,28 @@
 "use client";
 
-import { CSSProperties, useState } from "react"; 
+import { useState, useEffect, useRef } from "react"; 
 
-export default function ResizeTextarea() {
-    // チャット送信用スタイル
-    const textareaStyle: CSSProperties = {
-        resize: 'none',
-        bottom: 0 // 下端を固定
-    }
-
-    const [height, setHeight] = useState("auto")
+// 可変テキストエリア
+export default function ResizeTextarea(props: {className: string}) {
+    const { className } = props
     const [text, setText] = useState("");
+    const textareaRef = useRef<HTMLTextAreaElement>(null)
 
-    // 最高4行まで伸びる
     const resize = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.target.value)
-        setHeight(`${Math.min(e.target.scrollHeight, 4 * e.target.scrollHeight)}px`)
+        if(textareaRef.current){
+            textareaRef.current.style.height = "auto"
+            textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
+        }
     }
 
+    useEffect(() => {
+        if(textareaRef.current){
+            textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
+        }
+    }, [])
+
     return(
-        <textarea rows={4} cols={30} style={textareaStyle} />
+        <textarea ref={textareaRef} rows={1} cols={20} onChange={resize} className={className} style={{resize: 'none', bottom: 0, overflow: "hidden" }} value={text} />
     )
 }
