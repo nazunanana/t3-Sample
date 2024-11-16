@@ -1,4 +1,7 @@
 /* 画面レイアウト */
 .layout {
-    @apply flex justify-center items-center h-screen bg-[#ffd1cc]
+    @apply flex justify-center items-center flex-col h-screen bg-[#ffd1cc]
+}
+.label {
+    @apply block text-gray-700 text-sm font-bold
 }
