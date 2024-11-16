@@ -1,0 +1,4 @@
+/* 画面レイアウト */
+.layout {
+    @apply flex justify-center items-center h-screen bg-[#ffd1cc]
+}

@@ -12,12 +12,13 @@ export default function ResizeTextarea() {
     const [height, setHeight] = useState("auto")
     const [text, setText] = useState("");
 
+    // 最高4行まで伸びる
     const resize = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.target.value)
-        setHeight(`${Math.min(scrollHeight, 4 * e.target.scrollHeight)}px`)
+        setHeight(`${Math.min(e.target.scrollHeight, 4 * e.target.scrollHeight)}px`)
     }
 
     return(
-        <textarea rows={1} cols={30} onChange={resize} style={textareaStyle, height: height} defaultValue={text} />
+        <textarea rows={4} cols={30} style={textareaStyle} />
     )
 }
