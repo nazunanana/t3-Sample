@@ -14,6 +14,7 @@ export default async function Home() {
         border
         rounded
         focus:outline-none
+        mb-3
     `
 
     return (
@@ -45,13 +46,24 @@ export default async function Home() {
                         </button>
                     </div>
 
-                    <label className="label">
-                        可変テキストエリア
-                    </label>
-                    <ResizeTextarea className={textareaClass} />
+                        <label className="label">
+                            可変テキストエリア
+                        </label>
+                        <ResizeTextarea className={textareaClass} />
 
-                    {/* TODO: Tag.tsxへのボタン実装する
-                https://tailwindui.com/components/application-ui/elements/buttons */}
+                        <div className="space-x-4">
+                        <button className="flex-col bg-[#ffa299] hover:bg-[#f87f74] text-white font-semibold py-2 px-4 rounded">
+                            <Link href="tag.tsx">
+                                ボタン
+                            </Link>
+                        </button>
+
+                        <button className="flex-col bg-[#ffffff] hover:bg-[#ff8a80] text-[#ff8a80] hover:text-white border border-[#ff8a80] hover:border-transparent font-semibold py-2 px-4 rounded">
+                            <Link href="tag.tsx">
+                                ボタン
+                            </Link>
+                        </button>
+                    </div>
                 </div>
             </div>
         </HydrateClient>
