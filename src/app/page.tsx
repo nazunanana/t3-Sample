@@ -14,7 +14,6 @@ export default async function Home() {
         border
         rounded
         focus:outline-none
-        mb-3
     `
 
     return (
@@ -40,29 +39,29 @@ export default async function Home() {
                     <div className="flex space-x-2 mb-3 items-end">
                         <textarea rows={4} cols={30} className={textareaClass} />
                         <button>
-                            <Link href="tag.tsx">
+                            <Link href="/tag">
                                 <IoSendSharp style={{ color: '#5c5c5c', fontSize: '25px' }} />
                             </Link>
                         </button>
                     </div>
 
-                        <label className="label">
-                            可変テキストエリア
-                        </label>
-                        <ResizeTextarea className={textareaClass} />
+                    <label className="label">
+                        可変テキストエリア
+                    </label>
+                    <ResizeTextarea className={`${textareaClass} mb-3`} />
 
-                        <div className="space-x-4">
-                        <button className="flex-col bg-[#ffa299] hover:bg-[#f87f74] text-white font-semibold py-2 px-4 rounded">
-                            <Link href="tag.tsx">
+                    <div className="space-x-4">
+                        <Link href="/tag">
+                            <button className="flex-col bg-[#ffa299] hover:bg-[#f87f74] text-white font-semibold py-2 px-4 rounded">
                                 ボタン
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
 
-                        <button className="flex-col bg-[#ffffff] hover:bg-[#ff8a80] text-[#ff8a80] hover:text-white border border-[#ff8a80] hover:border-transparent font-semibold py-2 px-4 rounded">
-                            <Link href="tag.tsx">
+                        <Link href="/tag">
+                            <button className="flex-col bg-[#ffffff] hover:bg-[#ff8a80] text-[#ff8a80] hover:text-white border border-[#ff8a80] hover:border-transparent font-semibold py-2 px-4 rounded">
                                 ボタン
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
