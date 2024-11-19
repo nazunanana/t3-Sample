@@ -1,4 +1,4 @@
-import { IoRemoveCircleSharp } from "react-icons/io5";
+import TagUI from "~/app/_components/TagUI";
 import '~/styles/app.css';
 
 export default function Page() {
@@ -12,15 +12,16 @@ export default function Page() {
         <div className="layout">
             <div>
                 <label className="label">
-                    タグ
+                    タグUI
                 </label>
-                <span id="badge-dismiss-1" className="inline-flex items-center px-2 py-1 font-semibold text-[#ff8a80] bg-white rounded-full border border-[#ff8a80]">
-                    <button data-dismiss-target="#badge-dismiss-1">
-                        {/* onClick={removeTag} */}
-                        <IoRemoveCircleSharp color="#ff7366" size="24px" />
-                    </button>
-                    <span className="pt-0.5 px-1 text-base leading-none">新規タグ</span>
-                </span>
+                <TagUI />
+
+                <label className="label">
+                    テキストエリア＋タグ
+                </label>
+                <textarea className="appearance-none border rounded py-1 px-3 mb-3 focus:outline-none">
+                    <TagUI />
+                </textarea>
             </div>
         </div>
     )
